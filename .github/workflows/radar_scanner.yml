@@ -1,0 +1,27 @@
+name: 24/7 Autonomous Security Radar Scanner
+
+on:
+  schedule:
+    - cron: '0 */4 * * *' # Automatically runs every 4 hours, every single day
+  workflow_dispatch: # Allows you to also click a button to run it manually whenever you want
+
+jobs:
+  scan-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Scraping Dependencies
+        run: pip install requests feedparser
+
+      - name: Run Radar Ingestion Engine
+        env:
+          GOOGLE_WEBAPP_URL: "YOUR_GOOGLE_WEBAPP_URL_HERE"
+        run: |
+          python .github/workflows/scanner.py
