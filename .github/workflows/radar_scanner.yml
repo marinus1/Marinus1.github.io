@@ -22,6 +22,6 @@ jobs:
 
       - name: Run Radar Ingestion Engine
         env:
-          GOOGLE_WEBAPP_URL: "YOUR_GOOGLE_WEBAPP_URL_HERE"
+          GOOGLE_WEBAPP_URL: "https://script.google.com/macros/s/AKfycbxoXeYqSMXP4LDg-NpOhl9ZBS-8TAtJN-VhW8yOHVp9vXMH6YqEb18_1cXzE5CO1E4A/exec"
         run: |
           python .github/workflows/scanner.py
