@@ -17,6 +17,13 @@ def scan_radar():
         for entry in feed.entries[:5]: # Grab the 5 latest updates from each stream
             title = entry.title
             link = entry.link
+            
+            # Link Safety Filter: Fixes the 404 issue by forcing absolute URLs
+            if link.startswith("//"):
+                link = f"https:{link}"
+            elif not link.startswith("http://") and not link.startswith("https://"):
+                link = f"https://{link}"
+                
             summary = entry.get("summary", "No technical summary provided by target array.")[:200] + "..."
             
             # Simple keyword categorization mapping engine
