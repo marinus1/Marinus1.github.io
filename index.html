@@ -48,14 +48,13 @@ G-MHMLGP02D6'); // Replace with your actual GA4 ID later
         
         <!-- Sidebar Navigation / Filter Controls -->
         <aside class="md:col-span-1 space-y-2">
-            <h3 class="text-xs uppercase tracking-widest text-slate-500 font-bold px-2 mb-3">Intelligence Channels</h3>
-            <button onclick="filterCategory('All')" class="w-full text-left px-3 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-all text-amber-500 bg-slate-800/50" id="btn-All">🌐 All Sectors</button>
-            <button onclick="filterCategory('Drones & Autonomous Systems')" class="w-full text-left px-3 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-all text-slate-400" id="btn-Drones">🛸 Drones, UAV & UGV Systems</button>
-            <button onclick="filterCategory('Surveillance & AI Analytics')" class="w-full text-left px-3 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-all text-slate-400" id="btn-Surveillance">🎥 CCTV & AI Analytics</button>
-            <button onclick="filterCategory('Spy & Covert Equipment')" class="w-full text-left px-3 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-all text-slate-400" id="btn-Spy">🕵️ Spy & Covert Gear</button>
-            <button onclick="filterCategory('Physical & Electronic Security')" class="w-full text-left px-3 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-all text-slate-400" id="btn-Physical">🔒 Physical Access Control</button>
-            <button onclick="filterCategory('Cybersecurity & Network Defense')" class="w-full text-left px-3 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-all text-slate-400" id="btn-Cyber">💻 Cybersecurity & IoT</button>
-        </aside>
+        <!-- Left Sidebar: Dynamic Alphabetical Categories -->
+<aside class="sidebar">
+    <h3>Intelligence Sectors</h3>
+    <ul class="category-list" id="alphabetical-categories">
+        <!-- Leave this completely empty! The script will instantly inject all 16 sectors here -->
+    </ul>
+</aside>
 
         <!-- Dynamic Content Stream -->
         <section class="md:col-span-3 space-y-4" id="radar-stream">
